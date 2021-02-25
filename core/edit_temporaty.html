@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>科协排班系统-课表修改</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light">
+<div class="container" style="max-width: 400px">
+    <div class="my-4 text-center">
+        <img class="mx-auto mb-3" src="../pic/Kx.png" alt="科协" style="width:72px;">
+        <h2>课表修改</h2>
+    </div>
+    <div class="form-group row">
+        <label for="xh" class="col-2 col-form-label pr-0">学号</label>
+        <div class="col-10">
+            <input class="form-control" name="xh" id="xh" type="text" value="2010910208">
+            <div id="feedback"></div>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-block" type="submit">提交</button>
+</div>
+<script>
+    $(function () {
+        $("input[name=xh]").bind('input propertychange', function() {
+            console.log("change");
+            if ($("input[name=xh]").val().length == 10) {
+                $.ajax({
+                    url: "edit.php",
+                    data: {
+                        xh: $("input[name=xh]").val(),
+                        check:""
+                    },
+                    success: function (resule) {
+                        if(resule=="exist"){
+                            onValid("学号正确");
+                        }else{
+                            onInvalid("学号错误，请检查是否提交过课表信息");
+                        }
+                    }
+                });
+            }else{
+                $("#xh").removeClass("is-invalid");
+                $("#xh").removeClass("is-valid");
+                $("#feedback").removeClass("invalid-feedback");
+                $("#feedback").removeClass("valid-feedback");
+                $("#feedback").text("");
+            }
+        });
+        $("button").click(function(){
+            if($("#xh").hasClass("is-valid")){
+                // 认证成功
+                window.location.href = "edit.php?xh="+$("input[name=xh]").val();
+            }
+        });
+        $(document).keyup(function(event){
+            if(event.keyCode == 13){
+                $("button").trigger("click");
+            }
+        });
+
+
+    })
+</script>
+</body>
+</html>

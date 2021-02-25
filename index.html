@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>科协排班系统</title>
+    <!--    <meta content="width=device-width,user-scalable=0, initial-scale=1.0,maximum-scable=1.0,minimum-scable=1.0"-->
+    <!--          name="viewport">-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.0.0/jquery.min.js"></script>
+    <script src="js/Schedule.js"></script>
+    <style type="text/css">
+        th {
+            /*padding: .75rem 0 !important;*/
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        button {
+            height: 38px;
+        }
+
+        td {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .content {
+            padding: .75rem 0 !important;
+        }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container">
+
+    <div class="row">
+        <img src="./pic/Kx.png" class="rounded mx-auto d-block" style="height: 80px;" alt="科协">
+    </div>
+    <div class="mx-0 row justify-content-between">
+        <button type="button" class="btn btn-primary float-left" id="lastWeek">上一周</button>
+        <p id="week" class="lead text-center pt-1">第一周</p>
+        <button type="button" class="btn btn-primary float-right" id="nextWeek">下一周</button>
+    </div>
+    <table class="table table-bordered text-center" cellpadding="0" cellspacing="0">
+
+        <thead class="thead-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col" class="titleDate">周一</th>
+            <th scope="col" class="titleDate">周二</th>
+            <th scope="col" class="titleDate">周三</th>
+            <th scope="col" class="titleDate">周四</th>
+            <th scope="col" class="titleDate">周五</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td scope="row">1<br><b>8:20</b></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+        </tr>
+        <tr>
+            <td scope="row">2<br><b>9:15</b></td>
+        </tr>
+        <tr>
+            <td>3<br><b>10:20</b></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+        </tr>
+        <tr>
+            <td scope="row">4<br><b>11:15</b></td>
+        </tr>
+        <tr>
+            <td scope="row">5<br><b>14:00</b></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+        </tr>
+        <tr>
+            <td scope="row">6<br><b>14:55</b></td>
+        </tr>
+        <tr>
+            <td scope="row">7<br><b>16:00</b></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+            <td class="content" rowspan="2"></td>
+        </tr>
+        <tr>
+            <td scope="row">8<br><b>16:55</b></td>
+        </tr>
+        </tbody>
+    </table>
+    </tbody>
+    <div class="rounded-lg table-bordered py-3">
+        <div class="mx-0 row justify-content-center">
+            <!-- <button type="button" id="edit" class="btn btn-outline-primary">修改空闲时间</button> -->
+            <button type="button" id="refresh" class="btn btn-outline-primary ml-5">刷新</button>
+            <button type="button" id="confirm" class="btn btn-outline-primary ml-5">确定</button>
+        </div>
+        <div class="statis row mx-3 mt-3 justify-content-center"></div>
+    </div>
+
+    <div class="row justify-content-center my-2">
+        <kbd id="admin">By Drzad For 科协竞赛部</kbd>
+    </div>
+</div>
+</body>
+</html>
